@@ -1,0 +1,65 @@
+{
+  "name": "file-validator",
+  "version": "1.0.0",
+  "description": "A simple and extensible file validator for browser and server-side usage. Supports type, size, and extension validation.",
+  "main": "dist/index.js",
+  "module": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./rules/validate-extension": {
+      "import": "./dist/rules/validate-extension.js"
+    },
+    "./rules/validate-size": {
+      "import": "./dist/rules/validate-size.js"
+    },
+    "./rules/validate-type": {
+      "import": "./dist/rules/validate-type.js"
+    },
+    "./file-validator.types": {
+      "import": "./dist/file-validator.types.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "file",
+    "validator",
+    "upload",
+    "file validation",
+    "typescript",
+    "browser",
+    "next.js",
+    "file size",
+    "file type",
+    "file extension"
+  ],
+  "author": "Yiming Liao",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yiming-liao/file-validator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yiming-liao/file-validator/issues"
+  },
+  "homepage": "https://github.com/yiming-liao/file-validator#readme",
+  "devDependencies": {
+    "@types/mime-types": "^2.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
+  },
+  "dependencies": {
+    "mime-types": "^3.0.1"
+  }
+}
