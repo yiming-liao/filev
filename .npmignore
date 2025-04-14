@@ -1,0 +1,9 @@
+__test__/
+*.test.ts
+*.test.js
+*.test.d.ts
+tsconfig.json
+tsconfig.build.json
+vitest.config.ts
+*.spec.ts
+.vscode/

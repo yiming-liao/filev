@@ -33,3 +33,7 @@ yarn.lock
 
 # MacOS specific
 Thumbs.db
+
+
+# Test
+__test__

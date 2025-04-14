@@ -1,8 +1,9 @@
-# file-validator
+# filev
 
 A simple and extensible file validation library for browser and server environments.
 
-> Lightweight, type-safe, and modular — ideal for custom file upload flows, client-side checks, or API validation pipelines.
+> A lightweight and extensible file validation library for both browser and server environments.  
+> Supports type, size, and extension rules — ideal for file uploads in modern web applications.
 
 ## Features
 
@@ -14,7 +15,7 @@ A simple and extensible file validation library for browser and server environme
 ## Installation
 
 ```bash
-npm install file-validator
+npm install filev
 ```
 
 ## Usage
@@ -22,7 +23,7 @@ npm install file-validator
 #### Validate single file
 
 ```typescript
-import { FileValidator } from "file-validator";
+import { FileValidator } from "filev";
 
 const validated = FileValidator.validate({
   file: myFile,
@@ -34,7 +35,7 @@ const validated = FileValidator.validate({
 #### Validate multiple files
 
 ```typescript
-import { FileValidator } from "file-validator";
+import { FileValidator } from "filev";
 
 const result = FileValidator.validateMultiple({
   files: fileList, // File | File[]
@@ -48,9 +49,9 @@ const result = FileValidator.validateMultiple({
 You can also use the built-in rules separately:
 
 ```typescript
-import { validateSize } from "file-validator/rules/validate-size";
-import { validateType } from "file-validator/rules/validate-type";
-import { validateExtension } from "file-validator/rules/validate-extension";
+import { validateSize } from "filev/rules/validate-size";
+import { validateType } from "filev/rules/validate-type";
+import { validateExtension } from "filev/rules/validate-extension";
 
 validateSize(file, 10 * 1024 * 1024);
 validateType(file);
