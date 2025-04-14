@@ -1,6 +1,6 @@
 {
   "name": "filev",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple and extensible file validator for browser and server-side usage. Supports type, size, and extension validation.",
   "keywords": [
     "file",
