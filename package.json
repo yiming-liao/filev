@@ -16,48 +16,27 @@
   ],
   "license": "ISC",
   "author": "Yiming Liao",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/types/index.d.ts"
-    },
-    "./rules/validate-extension": {
-      "import": "./dist/rules/validate-extension.js",
-      "types": "./dist/rules/validate-extension.d.ts"
-    },
-    "./rules/validate-size": {
-      "import": "./dist/rules/validate-size.js",
-      "types": "./dist/rules/validate-size.d.ts"
-    },
-    "./rules/validate-type": {
-      "import": "./dist/rules/validate-type.js",
-      "types": "./dist/rules/validate-type.d.ts"
-    },
-    "./file-validator.types": {
-      "import": "./dist/file-validator.types.js",
-      "types": "./dist/file-validator.types.d.ts"
-    }
-  },
-  "type": "module",
+ "main": "./dist/index.js",
+"module": "./dist/index.mjs",
+"types": "./dist/index.d.ts",
+"exports": {
+  ".": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  }
+},
   "files": [
     "dist"
   ],
-  "scripts": {
-    "dev": "tsc --watch",
-    "clean": "rm -rf dist",
-    "test": "vitest",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.esm.json",
-    "build": "npm run clean && npm run build:cjs && npm run build:esm",
-    "prepublishOnly": "npm run build"
-  },
+"scripts": {
+  "build": "tsup",
+  "dev": "tsup --watch"
+},
   "devDependencies": {
     "@types/mime-types": "^2.1.4",
     "ts-node": "^10.9.2",
+    "tsup": "^8.4.0",
     "typescript": "^5.8.3",
     "vitest": "^3.1.1"
   },
