@@ -1,6 +1,6 @@
 {
   "name": "filev",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple and extensible file validator for browser and server-side usage. Supports type, size, and extension validation.",
   "keywords": [
     "file",
@@ -16,23 +16,23 @@
   ],
   "license": "ISC",
   "author": "Yiming Liao",
- "main": "./dist/index.js",
-"module": "./dist/index.mjs",
-"types": "./dist/index.d.ts",
-"exports": {
-  ".": {
-    "types": "./dist/index.d.ts",
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.js"
-  }
-},
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
-"scripts": {
-  "build": "tsup",
-  "dev": "tsup --watch"
-},
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
   "devDependencies": {
     "@types/mime-types": "^2.1.4",
     "ts-node": "^10.9.2",
