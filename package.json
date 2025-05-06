@@ -16,14 +16,14 @@
   ],
   "license": "ISC",
   "author": "Yiming Liao",
-  "main": "dist/index.js",
-  "module": "./dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
     },
     "./rules/validate-extension": {
       "import": "./dist/rules/validate-extension.js",
@@ -46,13 +46,15 @@
   "files": [
     "dist"
   ],
-  "scripts": {
-    "dev": "tsc --watch",
-    "clean": "rm -rf dist",
-    "test": "vitest",
-    "build": "tsc",
-    "prepublishOnly": "npm run build"
-  },
+ "scripts": {
+  "dev": "tsc --watch",
+  "clean": "rm -rf dist",
+  "test": "vitest",
+  "build:cjs": "tsc -p tsconfig.cjs.json",
+  "build:esm": "tsc -p tsconfig.esm.json",
+  "build": "npm run clean && npm run build:cjs && npm run build:esm",
+  "prepublishOnly": "npm run build"
+},
   "devDependencies": {
     "@types/mime-types": "^2.1.4",
     "ts-node": "^10.9.2",
